@@ -1,4 +1,5 @@
 import carga
+import proceso
 import os.path
 class Index:
     opcion="1"
@@ -21,14 +22,19 @@ def main():
             op=input("Ingrese una opcion: ")
             if op == '1':               
                 rt=input("Ingrese la ruta del archivo: ")
-                ext=os.path.splitext(rt)                
+                ext=os.path.splitext(rt)
+                
                 if ext[1]==".xml":
-                    carga.Carga_archivo(rt)                                     
+                    var=carga.Carga_archivo(rt)
+                    var.cargar()                   
                 else:
                     print("Archivo incorrecto")
 
             elif op == '2':
-                print("op 2")
+                rt=input("Ingrese el nombre de la matriz a operar... : ")
+                var2=proceso.Proceso(rt)
+                var2.verificar()
+                          
             elif op == '3':
                 print("op 3")
             elif op == '4':
@@ -36,10 +42,10 @@ def main():
             elif op == '5':
                 print("op 5")
             elif op == '6':
-                print("op 6")
+                break
             else:
                 print("Opcion Invalida")
-                break
+                #break
 
 if __name__ == "__main__":
     main()

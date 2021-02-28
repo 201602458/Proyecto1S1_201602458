@@ -1,16 +1,30 @@
 import proceso
+import re
+from array import *
 class Carga_archivo:
 
-    def __init__ (self,link):
-        self.link=link
+    contenido = ""
 
-    def carga(self):
+    def __init__ (self,link):
+        self.link=link 
+        self.cont="" 
+        #self.matriz = []    
+        
+        
+    def cargar(self):
         try:       
-            archivo = open(self.link, 'r')
-            contenido = archivo.read()
-            proceso.Proceso(contenido)           
+            archivo = open(self.link, 'r')           
+            Carga_archivo.contenido=archivo.read()
+            #for x in range(0, len(lista)):
+             #   print(lista[x])
+
+            print("Archivo cargado satisfactoriamente")
+            #proceso.Proceso(contenido)   
+                    
         except:
-            print("Ruta invalida")       
+            print("Ruta invalida")
+
+    
 
    
     
