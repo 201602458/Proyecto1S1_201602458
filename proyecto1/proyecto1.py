@@ -7,6 +7,9 @@ class Index:
     def __init__ (self, opcion):
         self.opcion=opcion
 
+    
+       
+
 def main():
 
         menu='''Menu Principal:
@@ -30,22 +33,44 @@ def main():
                 else:
                     print("Archivo incorrecto")
 
-            elif op == '2':
-                rt=input("Ingrese el nombre de la matriz a operar... : ")
-                var2=proceso.Proceso(rt)
+            elif op == '2':              
+                var2=proceso.Proceso()
                 var2.verificar()
                           
             elif op == '3':
-                print("op 3")
+                rt=input("Ingrese la ruta del archivo de salida: ")
+                ext=os.path.splitext(rt)
+
+                if ext[1]==".xml":
+                    var2.salida(rt)                  
+                else:
+                    print("Ruta de Archivo Incorrecto")
+
             elif op == '4':
-                print("op 4")
+                texto='''
+                Maria Luisa Fernanda calderon Molina
+                201602458
+                Introduccion a la Programacion y Computacion 2
+                Seccion "A"
+                4to Semestre'''
+                print(texto)
+
             elif op == '5':
-                print("op 5")
+                rt=input("Ingrese nombre de la matriz: ")                
+                var2.buscar(rt)
+
+
+                
             elif op == '6':
                 break
             else:
                 print("Opcion Invalida")
                 #break
 
+    
+
+
 if __name__ == "__main__":
     main()
+
+    
