@@ -26,18 +26,17 @@ class Proceso:
         
     def separar(self):
        # try:
+            print("Creando matriz")
             self.lista = re.split('<|>|=|'+chr(32)+'|'+chr(9)+'|'+chr(34)+'|\n|""',self.archivo) 
            
             conta=0
             for i in range(0, len(self.lista)):
 
+                
                 #con el matriz
                 if self.lista[i]=="nombre":
-                    if conta >= 1:
-                        print("se repetira el ciclo de enviar la matriz//// aqui ma todo")
-                    else:
-                        print("primera vez que entra///")
-                    nombre=self.lista[i+2] 
+                    nombre=self.lista[i+2]  
+                    Proceso.nombre=nombre                   
                     conta=conta+1 
                 if self.lista[i]=="n":
                     n=int(self.lista[i+1])   
@@ -58,8 +57,8 @@ class Proceso:
             self.var.sumatoria()
             self.var.graficar()
 
-    def sumatoria(self, m_n, m_b):
-        #print(m_n)
+    def sumatoria(self, m_n, m_b):        
+        print("Realizando sumatoria")
         c1=0
         c2=c1+1
         i=len(m_b)-1
@@ -107,7 +106,7 @@ class Proceso:
 
 
     def texto(self, m_n):
-        Proceso.cadena='<matriz nombre="'+self.nombre+'_Salida">\n'
+        Proceso.cadena='<matriz nombre="'+Proceso.nombre+'_Salida">\n'
         #print(m_n)
 
         for i in range(0, len(m_n)):

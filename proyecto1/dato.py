@@ -104,6 +104,7 @@ class matriz_dato:
         aux=temporal.x_siguiente
 
         while temporal.y_abajo != None:
+            
             while aux.x_siguiente != None:
                 
                 if i == str(aux.x) and j == str(aux.y):
@@ -115,8 +116,12 @@ class matriz_dato:
                 
                     
                 aux=aux.x_siguiente
+
             temporal=temporal.y_abajo
             aux=temporal.x_siguiente
+            if aux ==None:
+                break
+
 
     def sumatoria(self):
         temporal=self.inicio.y_abajo
@@ -140,8 +145,8 @@ class matriz_dato:
             temporal=temporal.y_abajo
             aux=temporal.x_siguiente
 
-        #print(lista_n)
-        #print(lista_b)
+            if aux ==None:
+                break
         var =proceso.Proceso()
         var.sumatoria(lista_n,lista_b)
         

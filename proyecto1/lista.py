@@ -59,7 +59,22 @@ class matriz_dato:
             os.system("dot graficaDoble.dot -Tpng -o grafsnake.png")
             #os.system("eog, grafsnake.png")
             aux=aux.siguiente
+            
         
+    def buscarN(self, nombre):
+
+        aux=self.inicio.siguiente
+
+        while aux != self.inicio:
+
+            if aux.nombre==nombre:
+                #crear el texto y mostrar la imagen
+                print("Matriz existente")
+            else:
+                self.buscar(nombre)
+            
+            
+            aux=aux.siguiente
     
 
         
